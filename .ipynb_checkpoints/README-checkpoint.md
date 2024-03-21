@@ -43,6 +43,34 @@ The dataset we used contains 1534 rows, each corresponding to a different power 
 |TOTAL.CUSTOMERS             | Annual number of total customers served in the U.S. state        |
 
 
+#### Data Cleaning
+Before conducting any analysis on the data, we need to clean it so that it is easier to perform tests and analyses on it.
+The data contained a row of unimportant values and descriptions which we first dropped.
+Since we had the columns `OUTAGE.START.DATE` and `OUTAGE.START.TIME`, we combine them into a single pd.Timestamp column called `OUTAGE.START`. We do the same for `OUTAGE.RESTORATION.DATE` and `OUTAGE.RESTORATION.TIME`, and made a new column called `OUTAGE.RESTORATION`. We then drop the four original columns that we used, since they are now redundant.
+
+We converted the datatypes of `'TOTAL.PRICE'`, `'TOTAL.SALES'`, `'OUTAGE.DURATION'` and `'DEMAND.LOSS.MW'` to be `float` values instead of strings.
+We converted the `OUTAGE.DURATION` column from minutes to hours, to have easily interpretable results
+
+`print(outage_df.head().to_markdown(index=False))`
+
+|   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     | CLIMATE.CATEGORY   | CAUSE.CATEGORY     | CAUSE.CATEGORY.DETAIL   |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   CUSTOMERS.AFFECTED |   TOTAL.PRICE |   TOTAL.SALES |   TOTAL.CUSTOMERS | OUTAGE.START        | OUTAGE.RESTORATION   |
+|-------:|--------:|:-------------|:--------------|:-------------------|:-------------------|:-------------------|:------------------------|------------------:|-----------------:|---------------------:|--------------:|--------------:|------------------:|:--------------------|:---------------------|
+|   2011 |       7 | Minnesota    | MRO           | East North Central | normal             | severe weather     | nan                     |        51         |              nan |                70000 |          9.28 |   6.56252e+06 |       2.5957e+06  | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |
+|   2014 |       5 | Minnesota    | MRO           | East North Central | normal             | intentional attack | vandalism               |         0.0166667 |              nan |                  nan |          9.28 |   5.28423e+06 |       2.64074e+06 | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |
+|   2010 |      10 | Minnesota    | MRO           | East North Central | cold               | severe weather     | heavy wind              |        50         |              nan |                70000 |          8.15 |   5.22212e+06 |       2.58690e+06 | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |
+|   2012 |       6 | Minnesota    | MRO           | East North Central | normal             | severe weather     | thunderstorm            |        42.5       |              nan |                68200 |          9.19 |   5.78706e+06 |       2.60681e+06 | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |
+|   2015 |       7 | Minnesota    | MRO           | East North Central | warm               | severe weather     | nan                     |        29         |              250 |               250000 |         10.43 |   5.97034e+06 |       2.67353e+06 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |
+
+
+#### Univariate Analysis
+
+ <iframe
+  src="assets/univar_plot1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 
 
 
