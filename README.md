@@ -72,7 +72,6 @@ In the univariate analysis, we looked at the distribution of frequencies of powe
   height="600"
   frameborder="0"
 ></iframe>
-
 The bar chart presents a univariate analysis of power outages classified by climate category. It indicates that outages are most frequently reported in 'normal' climate conditions, followed by 'cold', with 'warm' conditions experiencing the fewest outages. This distribution suggests that climatic conditions have a significant impact on the occurrence of power outages.
 
 
@@ -96,7 +95,6 @@ The histogram illustrates the frequency of power outages across different NERC (
   height="600"
   frameborder="0"
 ></iframe>
-
 The bar chart displays the average outage duration associated with various cause categories. Severe weather stands out as the leading cause of prolonged power outages, while other categories like islanding, intentional attack, and equipment failure result in relatively shorter outage durations. This data highlights the critical impact of weather-related incidents on power infrastructure stability.
 
 #### Interesting Aggregates
@@ -310,7 +308,6 @@ We looked at the missingness of the `DEMAND.LOSS.MW` column to check if it was d
   height="600"
   frameborder="0"
 ></iframe>
-
 The bar chart explores the relationship between missing data in the DEMAND.LOSS.MW variable and NERC.REGION categories. Each NERC region shows two bars representing the proportion of missing (True) and non-missing (False) DEMAND.LOSS.MW data. The relatively uniform distribution of missing and non-missing data across different regions suggests that missingness in demand loss is likely missing completely at random (MCAR) rather than missing at random (MAR), as there's no clear pattern indicating that missingness depends on the NERC region.
 
 We fail to reject the null hypothesis. For the columns DEMAND.LOSS.MW and NERC.REGION, we calculate a p-value of 1.0, which is greater than 0.05. Thus we can say that `DEMAND.LOSS.MW` is not dependent on the `NERC.REGION` column.
@@ -402,9 +399,9 @@ The final model achieved a lower RMSE of 88.6289 compared to the baseline model'
 
 ### Fairness Analysis
 
-###### Null Hypothesis: 
+##### Null Hypothesis: 
 Our model is fair. Its RMSE for the first half of the year and the second half of the year are roughly the same, and any differences are due to random chance.
-###### Alternative Hypothesis: 
+##### Alternative Hypothesis: 
 Our model is unfair. Its RMSE for the first half of the year is lower than its RMSE for the second half of the year.
 
 **Group X and Group Y:**
@@ -424,10 +421,10 @@ The test statistic is the difference in RMSE between Group X and Group Y.
 
 The significance level (α) is conventionally set at 0.05, meaning there is a 5% chance of rejecting the null hypothesis when it is true (Type I error).
 
-**Resulting p-value:** 0.808
+**Resulting p-value:** 0.782
 
  <iframe
-  src="assets/fig_fairness.html"
+  src="assets/fairness_plot1.html"
   width="800"
   height="600"
   frameborder="0"
