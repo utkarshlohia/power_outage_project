@@ -430,7 +430,7 @@ The significance level (α) is conventionally set at 0.05, meaning there is a 5%
   frameborder="0"
 ></iframe>
 
-The p-value of 0.808 suggests there is no significant difference in the RMSE — our measure of predictive accuracy for outage durations — between Group X (second half of the year) and Group Y (first half of the year). This high p-value indicates that any observed discrepancy in RMSE between the two groups can be attributed to random variation rather than a systematic disparity due to the time of year.
+The p-value of 0.782 suggests there is no significant difference in the RMSE — our measure of predictive accuracy for outage durations — between Group X (second half of the year) and Group Y (first half of the year). This high p-value indicates that any observed discrepancy in RMSE between the two groups can be attributed to random variation rather than a systematic disparity due to the time of year.
 
 In terms of RMSE parity, this result implies that the model performs consistently across both time periods. Therefore, from the perspective of prediction parity — a fairness metric that examines whether a model's predictive errors are consistent across groups — the model appears fair with respect to the time of year the outages occurred. There's no evidence of bias that systematically leads to better or worse performance in predicting the duration of outages for either half of the year.
 
